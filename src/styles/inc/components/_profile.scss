@@ -1,0 +1,21 @@
+.profile {
+  height: 50px;
+  padding: 0 30px;
+  flex-shrink: 0;
+  font-weight: 600;
+  .profile-menu {
+    display: flex;
+    align-items: center;
+    height: 17px;
+  }
+  .separator {
+    margin: 0 14px;
+    width: 1px;
+    height: 17px;
+    background-color: #91929D;
+  }
+
+  svg {
+    margin-left: 8px;
+  }
+}

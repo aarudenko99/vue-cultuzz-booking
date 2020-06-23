@@ -1,0 +1,58 @@
+$switch-border-width: 3px;
+$switch-bg-off: #c8c9ce;
+$switch-bg-on: $primary;
+$switch-bg-disabled: #dedee2;
+$switch-button-size: 24px;
+$switch-button-bg: #fff;
+$switch-min-width: 65px;
+
+.switcher-wrapper {
+  display: block;
+  input[type='checkbox'] {
+    display: none;
+
+    &:checked {
+      & + .switcher-label {
+        background-color: $switch-bg-on;
+        .switcher-button {
+          left: calc(100% - #{$switch-border-width});
+          transform: translateX(-100%);
+        }
+      }
+    }
+    &:disabled, &.disabled {
+      & + .switcher-label {
+        cursor: default;
+        background-color: $switch-bg-disabled;
+      }
+    }
+  }
+
+  .switcher-label {
+    cursor: pointer;
+    position: relative;
+    display: block;
+    align-items: center;
+    margin: 0;
+
+    transition: background-color 0.2s;
+    width: $switch-min-width;
+    height: $switch-button-size + ( $switch-border-width * 2 );
+    //padding: $switch-border-width;
+    border-radius: $switch-button-size;
+    //border: $switch-border-width solid $switch-bg-off;
+    background-color: $switch-bg-off;
+    text-align: left;
+
+    .switcher-button {
+      transition: all 0.2s;
+      position: absolute;
+      top: $switch-border-width;
+      left: $switch-border-width;
+      width: $switch-button-size;
+      height: $switch-button-size;
+      border-radius: $switch-button-size;
+      background-color: $switch-button-bg;
+    }
+  }
+}

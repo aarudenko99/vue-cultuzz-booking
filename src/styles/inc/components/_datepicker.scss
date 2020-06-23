@@ -1,0 +1,45 @@
+.date-picker {
+  .drop-down-menu {
+    color: $datepicker-color;
+    padding: 20px;
+    max-width: 355px;
+    min-width: 355px;
+    @include media-breakpoint-down(sm) {
+      padding: 6px;
+      max-width: 328px;
+      min-width: 328px;
+    }
+    nav {
+      color: $primary;
+      .btn-icon {
+        padding: 7px 10px;
+      }
+      span {
+        font-weight: 600;
+      }
+    }
+    .wdays, .days {
+      > div {
+        height: 45px;
+        width: 45px;
+        text-align: center;
+        line-height: 45px;
+        &.disabled {
+          pointer-events: none;
+          color: $datepicker-disabled-color;
+        }
+        &.today {
+          font-weight: bold;
+        }
+        &.current {
+          background-color: $datepicker-selected-background;
+          color: $datepicker-selected-color;
+          border-radius: 50%;
+        }
+      }
+    }
+    .days > div:not(.disabled) {
+      cursor: pointer;
+    }
+  }
+}
